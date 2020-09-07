@@ -605,16 +605,7 @@ Wire Wire Line
 	6900 8900 6900 8850
 Wire Wire Line
 	6900 7350 6900 7300
-Wire Wire Line
-	6450 8300 6500 8300
-Connection ~ 6450 8300
-Wire Wire Line
-	6450 8500 6500 8500
-Wire Wire Line
-	6450 8300 6450 8500
-Wire Wire Line
-	6400 8300 6450 8300
-Text GLabel 6400 8300 0    50   Input ~ 0
+Text GLabel 6400 8500 0    50   Input ~ 0
 TX_EN
 Wire Wire Line
 	6100 6650 6500 6650
@@ -623,18 +614,9 @@ Wire Wire Line
 	6100 6650 6100 7050
 Wire Wire Line
 	6050 6650 6100 6650
-Wire Wire Line
-	6450 6750 6500 6750
-Connection ~ 6450 6750
-Wire Wire Line
-	6450 6950 6500 6950
-Wire Wire Line
-	6450 6750 6450 6950
-Wire Wire Line
-	6400 6750 6450 6750
 Text GLabel 6050 6650 0    50   Output ~ 0
 UART_RX
-Text GLabel 6400 6750 0    50   Input ~ 0
+Text GLabel 6400 6950 0    50   Input ~ 0
 RX_EN
 Text GLabel 7350 8750 2    50   Output ~ 0
 TX-
@@ -9492,18 +9474,9 @@ Wire Wire Line
 	4550 7400 4550 7800
 Wire Wire Line
 	4500 7400 4550 7400
-Wire Wire Line
-	4900 7500 4950 7500
-Connection ~ 4900 7500
-Wire Wire Line
-	4900 7700 4950 7700
-Wire Wire Line
-	4900 7500 4900 7700
-Wire Wire Line
-	4850 7500 4900 7500
 Text GLabel 4500 7400 0    50   Output ~ 0
 UART_CK
-Text GLabel 4850 7500 0    50   Input ~ 0
+Text GLabel 4850 7700 0    50   Input ~ 0
 CK_EN
 Text GLabel 5800 7950 2    50   Input ~ 0
 CK-
@@ -9818,4 +9791,55 @@ F 3 "" H 1200 1150 50  0001 C CNN
 	1    1200 1150
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	4850 7700 4950 7700
+$Comp
+L power:GNDA #PWR?
+U 1 1 5FB7640C
+P 4850 7550
+F 0 "#PWR?" H 4850 7300 50  0001 C CNN
+F 1 "GNDA" H 4700 7500 50  0000 C CNN
+F 2 "" H 4850 7550 50  0001 C CNN
+F 3 "" H 4850 7550 50  0001 C CNN
+	1    4850 7550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4850 7550 4850 7500
+Wire Wire Line
+	4850 7500 4950 7500
+Wire Wire Line
+	6400 8500 6500 8500
+$Comp
+L power:GNDA #PWR?
+U 1 1 60184ABC
+P 6400 8350
+F 0 "#PWR?" H 6400 8100 50  0001 C CNN
+F 1 "GNDA" H 6250 8300 50  0000 C CNN
+F 2 "" H 6400 8350 50  0001 C CNN
+F 3 "" H 6400 8350 50  0001 C CNN
+	1    6400 8350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6400 8350 6400 8300
+Wire Wire Line
+	6400 8300 6500 8300
+Wire Wire Line
+	6400 6950 6500 6950
+$Comp
+L power:GNDA #PWR?
+U 1 1 60792F35
+P 6400 6800
+F 0 "#PWR?" H 6400 6550 50  0001 C CNN
+F 1 "GNDA" H 6250 6750 50  0000 C CNN
+F 2 "" H 6400 6800 50  0001 C CNN
+F 3 "" H 6400 6800 50  0001 C CNN
+	1    6400 6800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6400 6800 6400 6750
+Wire Wire Line
+	6400 6750 6500 6750
 $EndSCHEMATC
