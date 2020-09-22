@@ -1,0 +1,36 @@
+{
+  "configurations": [
+  {
+  "name": "STM32 Debug",
+  "includePath": [
+      "${env:VSARM}/armcc/arm-none-eabi/include/c++/9.2.1",
+      "${env:VSARM}/armcc/arm-none-eabi/include/c++/9.2.1/arm-none-eabi",
+      "${env:VSARM}/armcc/arm-none-eabi/include/c++/9.2.1/backward",
+      "${env:VSARM}/armcc/lib/gcc/arm-none-eabi/9.2.1/include",
+      "${env:VSARM}/armcc/lib/gcc/arm-none-eabi/9.2.1/include-fixed",
+      "${env:VSARM}/armcc/arm-none-eabi/include",
+      "${workspaceRoot}/Drivers/CMSIS/Include/",
+      "${workspaceRoot}/Drivers/CMSIS/Device/ST/STM32F3xx/Include/",
+      "${workspaceRoot}/Inc",
+      "${workspaceRoot}/Src",
+      "${workspaceRoot}/Drivers/STM32F3xx_HAL_Driver/Inc",
+      "${workspaceRoot}/Drivers/STM32F3xx_HAL_Driver/Inc/Legacy/",
+      "${workspaceRoot}/Drivers/STM32F3xx_HAL_Driver/Src"
+  ],
+  "defines": [
+      "STM32F334x8",
+      "USE_HAL_DRIVER"
+  ],
+  "intelliSenseMode": "clang-x64",
+  "browse": {
+  "path": [
+      "${workspaceRoot}",
+      "${env:VSARM}/armcc"
+  ],
+  "limitSymbolsToIncludedHeaders": false,
+  "databaseFilename": ""
+  }
+  }
+  ],
+  "version": 4
+}

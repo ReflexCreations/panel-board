@@ -278,7 +278,7 @@ U 1 1 63D7C17A
 P 750 4250
 F 0 "J1" H 600 3950 50  0000 C CNN
 F 1 "Barrel_Jack_MountingPin" H 1000 4600 50  0000 C CNN
-F 2 "Connector_BarrelJack:BarrelJack_CUI_PJ-102AH_Horizontal" H 800 4210 50  0001 C CNN
+F 2 "Connector_BarrelJack:BarrelJack_Wuerth_6941xx301002" H 800 4210 50  0001 C CNN
 F 3 "~" H 800 4210 50  0001 C CNN
 	1    750  4250
 	1    0    0    -1  
@@ -311,7 +311,7 @@ U 1 1 6442E07A
 P 1300 6850
 F 0 "SW2" H 1100 6950 50  0000 C CNN
 F 1 "SW_Push" H 1600 6950 50  0000 C CNN
-F 2 "Button_Switch_THT:SW_PUSH-12mm" H 1300 7050 50  0001 C CNN
+F 2 "Button_Switch_THT:SW_PUSH_6mm" H 1300 7050 50  0001 C CNN
 F 3 "~" H 1300 7050 50  0001 C CNN
 	1    1300 6850
 	1    0    0    -1  
@@ -358,7 +358,7 @@ U 1 1 64900255
 P 1300 6450
 F 0 "SW1" H 1100 6550 50  0000 C CNN
 F 1 "SW_Push" H 1600 6550 50  0000 C CNN
-F 2 "Button_Switch_THT:SW_PUSH-12mm" H 1300 6650 50  0001 C CNN
+F 2 "Button_Switch_THT:SW_PUSH_6mm" H 1300 6650 50  0001 C CNN
 F 3 "~" H 1300 6650 50  0001 C CNN
 	1    1300 6450
 	1    0    0    -1  
@@ -9570,12 +9570,12 @@ $EndComp
 $Comp
 L Device:R R37
 U 1 1 6F6B1FDD
-P 4750 7400
-F 0 "R37" V 4650 7400 50  0000 C CNN
-F 1 "0R" V 4750 7400 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" V 4680 7400 50  0001 C CNN
-F 3 "~" H 4750 7400 50  0001 C CNN
-	1    4750 7400
+P 4750 7800
+F 0 "R37" V 4850 7800 50  0000 C CNN
+F 1 "0R" V 4750 7800 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" V 4680 7800 50  0001 C CNN
+F 3 "~" H 4750 7800 50  0001 C CNN
+	1    4750 7800
 	0    1    1    0   
 $EndComp
 Wire Notes Line
@@ -9598,13 +9598,7 @@ Text GLabel 1250 5300 2    50   Output ~ 0
 CK+
 Text GLabel 1250 5400 2    50   Output ~ 0
 CK-
-Wire Wire Line
-	4950 7400 4900 7400
-Wire Wire Line
-	4550 7400 4600 7400
 Connection ~ 4550 7400
-Wire Wire Line
-	4550 7800 4950 7800
 Wire Notes Line
 	4500 8350 5900 8350
 Wire Wire Line
@@ -9852,4 +9846,10 @@ F 3 "" H 11150 9850 50  0001 C CNN
 	1    11150 9850
 	-1   0    0    1   
 $EndComp
+Wire Wire Line
+	4550 7400 4950 7400
+Wire Wire Line
+	4900 7800 4950 7800
+Wire Wire Line
+	4550 7800 4600 7800
 $EndSCHEMATC

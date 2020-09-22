@@ -1,0 +1,15 @@
+{
+  "configurations": [
+    {
+      "showDevDebugOutput": true,
+      "cwd": "${workspaceRoot}",
+      "executable": "./build/vsarm_firmware.elf",
+      "name": "Debug STM32",
+      "request": "launch",
+      "type": "cortex-debug",
+      "servertype": "stutil",
+      "device": "STM32F334x8",
+      "svdFile": "${workspaceRoot}/STM32F3x4.svd"
+    }
+  ]
+}
