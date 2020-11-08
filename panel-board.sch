@@ -833,8 +833,6 @@ RX+
 Text GLabel 1250 5200 2    50   Output ~ 0
 RX-
 Wire Wire Line
-	1850 4900 1850 4850
-Wire Wire Line
 	1250 5000 1550 5000
 Wire Wire Line
 	1750 5000 1750 5050
@@ -2367,17 +2365,6 @@ Wire Wire Line
 	11700 9300 11700 9250
 NoConn ~ 15950 1400
 $Comp
-L power:+5V #PWR014
-U 1 1 64BFC78D
-P 1850 4850
-F 0 "#PWR014" H 1850 4700 50  0001 C CNN
-F 1 "+5V" H 1850 4750 50  0000 C CNN
-F 2 "" H 1850 4850 50  0001 C CNN
-F 3 "" H 1850 4850 50  0001 C CNN
-	1    1850 4850
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:+24V #PWR010
 U 1 1 651682BF
 P 1400 4200
@@ -2554,28 +2541,6 @@ F 1 "PWR_FLAG" V 1700 1100 50  0000 C CNN
 F 2 "" H 1800 1150 50  0001 C CNN
 F 3 "~" H 1800 1150 50  0001 C CNN
 	1    1800 1150
-	-1   0    0    1   
-$EndComp
-$Comp
-L power:+5V #PWR08
-U 1 1 75324BF1
-P 1500 1150
-F 0 "#PWR08" H 1500 1000 50  0001 C CNN
-F 1 "+5V" H 1450 1300 50  0000 C CNN
-F 2 "" H 1500 1150 50  0001 C CNN
-F 3 "" H 1500 1150 50  0001 C CNN
-	1    1500 1150
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:PWR_FLAG #FLG03
-U 1 1 75325B0E
-P 1500 1150
-F 0 "#FLG03" H 1500 1225 50  0001 C CNN
-F 1 "PWR_FLAG" V 1400 1100 50  0000 C CNN
-F 2 "" H 1500 1150 50  0001 C CNN
-F 3 "~" H 1500 1150 50  0001 C CNN
-	1    1500 1150
 	-1   0    0    1   
 $EndComp
 Text GLabel 1800 1600 1    50   Output ~ 0
@@ -9386,17 +9351,6 @@ RS-485 Transceivers for UART  w/ termination\n(microcontroller to I/O comms)
 Wire Notes Line
 	5900 8350 5900 9150
 $Comp
-L Connector:TestPoint TP1
-U 1 1 6DAABC92
-P 1700 4900
-F 0 "TP1" H 1700 4950 50  0000 L CNN
-F 1 "TestPoint" H 1300 4950 50  0000 L CNN
-F 2 "TestPoint:TestPoint_Pad_D2.5mm" H 1900 4900 50  0001 C CNN
-F 3 "~" H 1900 4900 50  0001 C CNN
-	1    1700 4900
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:R R41
 U 1 1 6DD7C31D
 P 6300 7050
@@ -9645,15 +9599,6 @@ Wire Wire Line
 	1200 10200 1200 10250
 Wire Wire Line
 	1200 10250 1450 10250
-Connection ~ 1700 4900
-Wire Wire Line
-	1700 4900 1850 4900
-Wire Wire Line
-	1450 4900 1450 5100
-Wire Wire Line
-	1450 5100 1250 5100
-Wire Wire Line
-	1450 4900 1700 4900
 $Comp
 L Connector:TestPoint TP14
 U 1 1 60B879A0
@@ -9851,4 +9796,24 @@ Wire Wire Line
 	4900 7800 4950 7800
 Wire Wire Line
 	4550 7800 4600 7800
+NoConn ~ 1250 5100
+Text GLabel 950  1250 1    50   Output ~ 0
+5VD_4
+$Comp
+L power:+5V #PWR0179
+U 1 1 6009E231
+P 600 1250
+F 0 "#PWR0179" H 600 1100 50  0001 C CNN
+F 1 "+5V" H 700 1300 50  0000 C CNN
+F 2 "" H 600 1250 50  0001 C CNN
+F 3 "" H 600 1250 50  0001 C CNN
+	1    600  1250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	600  1250 600  1300
+Wire Wire Line
+	600  1300 950  1300
+Wire Wire Line
+	950  1300 950  1250
 $EndSCHEMATC
