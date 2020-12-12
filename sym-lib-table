@@ -1,3 +1,4 @@
 (sym_lib_table
   (lib (name LED_Board)(type Legacy)(uri ${KIPRJMOD}/panel-board.lib)(options "")(descr ""))
+  (lib (name ina826)(type Legacy)(uri ${KIPRJMOD}/ina826.lib)(options "")(descr ""))
 )
