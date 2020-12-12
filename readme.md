@@ -15,7 +15,7 @@ The Panel Boards purpose is to implement three subsystems underneath a standard 
     Leave all the other options as they are.
     Scroll down to "SMT Assembly" and switch it on
     Select "assemble top side"
-    Pick a quantity; if you only want one, 2 will be the minimum here
+    Pick a quantity; if you only want one, 5 assembled wil be the minimum you should order.
     Click "Confirm".
     On the right side of the page, click "Next"
     Click "Add BOM File"; upload the *release/bom.csv* file
