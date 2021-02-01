@@ -9,22 +9,30 @@ The Panel Boards purpose is to implement three subsystems underneath a standard 
 
 2. Place the order with [JLCPCB](https://jlcpcb.com)
 ```
+    Open https://jlcpcb.com/ in your web browser.
+    Click "Order Now" in the upper-right of the screen.
     Click "Add your gerber file", select the release-v2-RC2.zip file from the releases.
+    Pick a PCB Qty.  It has to be a multiple of 5.  You will need 4 panel boards per platform.  Note that the per-board cost may reduce quite dramatically as you increase your order size.
     Pick a board color or leave it at the default green. Last time I checked different colors only affect build time, not price.
     Pick a surface finish or leave it on the default. The default is cheapest, but contains lead. ENIG gives the pads a nice golden finish instead of silver.
     Leave all the other options as they are.
-    Scroll down to "SMT Assembly" and switch it on
+    Scroll down to "SMT Assembly" and switch it on.  This means they will solder components on the board for you.  But not necessarily all of them.
     Select "assemble top side"
-    Pick a quantity; if you only want one, 5 assembled wil be the minimum you should order.
+    Pick a quantity (SMT QTY).  If you picked 5 for the PCB Qty, you can choose to have only 2 assembled, to save money on parts and assembly fees.  Otherwise all of them will be assembled.
     Click "Confirm".
     On the right side of the page, click "Next"
     Click "Add BOM File"; upload the *release/bom.csv* file
     Click "Add CPL File"; upload the the *release/panel-board-top-pos.csv* file
     Click "Next"
     Review the specified parts; they should all be "confirmed" in the right column, so you can leave everything as it is.
+        It's IMPORTANT to check this page carefully, as stock shortages are not at all uncommon, and will be reported on this page.
+        If you proceed without addressing such issues, your order will go ahead but the missing components will be left out of the assembly process.  You will not be charged for these components, but they will not be mounted on your board either.
+        Also note that this page only considers a single board when giving the cost for each component.  Don't worry.  The actual per-component cost you are charged will be based on the total quantity of the component mounted on all boards combined.  You will be able to confirm this in the Bill of Materials, viewable from the shopping cart page.
     Click "Next"
-    In the preview, some ICs might look like they're oriented wrong. This is a problem with their viewer; the files are correct. If it ends up wrong (not aligning with the pads), they'll either correct it or email you to find a solution.
+        In the preview, some ICs might look like they're oriented wrong. This is a problem with their viewer; the files are correct. If it ends up wrong (not aligning with the pads), they'll either correct it or email you to find a solution.
     Click "Save to cart"
+        On the shopping cart page, you can access the Bill of Material for the SMT assembly, which will show exactly what you pay for each component.
+        If the total cost here is lower than you expected, take it as a sign to double-check the Bill of Material and the "Unselected Parts" in the next tab, and look for parts that should have been supplied by JLCPCB but weren't.
     Click "Check out Securely"
     Add your shipping and billing details
     Select a shipping method. Usually the DHL-based ones are fine. You can gamble on whether or not you want duty and customs paid up front (more expensive), or hope for the best with the cheaper option, in which case you might get a bill from the courier later.
@@ -36,7 +44,14 @@ The Panel Boards purpose is to implement three subsystems underneath a standard 
 
 3. Order the remaining through-hole parts - A list of these parts can be seen at `release/unpopulated.csv`. Companies that sell parts like this include Mouser, Digikey, RS-Components and Farnell.
 
-4. Solder the remaining parts onto the board. Fairly evident where each of them go, though a more detailed guide here could be helpful. Pull requests welcome. :-)
+4. Solder the remaining parts onto the board.  For some parts, you may need to work out a way to keep them from falling out from the board when you flip it upside-down to do the soldering.  I've heard of techniques including heat-resistant tape, folded paper towels and blu-tack.  You'll work something out, but keep in mind each method has its caveats, and don't forget you're dealing with a hot soldering iron, so take care.
+    Here is a guide for each through-hole part on the panel board:
+    J1 / Würth Elektronik 694106301002 / 2.1mm DC barrel jack connector: Easy.  Big contacts can take a lot of solder.
+    J2 / Amphenol FCI 54602-908LF / Rj45/ethernet connector: Snaps onto the board with plastic tabs so you don't have to worry about holding it in place.  These large components can get in the way when soldering other components, so consider doing them last.
+    J3 / 3M 30310-6002HB / 10-pin ST-LINK connector with plastic fence: By convention, the gap in the fence goes on the side with pin 1 - the pin with the square solder pad.  The gap also faces towards the edge of the board in this instance.
+    J4 / Harwin M20-9980446 / External Logic connector: It's quite possible you'll never use this connector, so you could consider postponing this one until you actually need it, which might also reduce the chance of damage to the 74HCT245 level-shifter chip from ESD.  This one falls right out if not held in place, so you'll want to apply some technique as touched on above.
+    J5,J6,J7,J8 / Japan Solderless Terminals B4B-PH-K-S(LF)(SN) / load cell sensor connectors: The gap in the fence goes towards the inside of the board.  If you're looking at the side of the connector with that gap, pin 1 is on the right.  Unless you're holding it upside-down.  Just point the gap towards the middle of the board and you'll be okay.  Though they have a little grip, I'd recommend you take steps (see above) to keep them in place when soldering.
+    SW1,SW2 / TE Connectivity 1825910-6: The pins lock into the board so you don't have to worry about it falling out of position.  When these switches are placed correctly, the pins come out on the left and right sides.  It's possible to bend the pins the wrong way if you're careless during insertion, but it's easy to rectify.
 
 ## Future Improvements
 - Under test, several boards had broken level shifters / microcontrollers due to ESD under improper handling. This shouldn't be a problem if taking proper ESD precaution. Reducing susceptibility to ESD would be important to improve reliability of these boards for end users, though.
