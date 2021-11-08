@@ -1,6 +1,6 @@
 # RE:Flex Dance Panel v2 PCB Design 
 
-This repository contains source documents and manufacturing files for the RE:Flex Dance Pad's Panel Board. It was created using [KiCAD 5.1.4](https://kicad-pcb.org/).
+This repository contains source documents and manufacturing files for the RE:Flex Dance Pad's Panel Board. It was created using [KiCAD 5.1.4](https://kicad.org/).
 
 The Panel Boards purpose is to implement three subsystems underneath a standard dance pad 'panel':
 - An interface for four [GML670 50kg Load Cell Sensors](http://www.gavincc.com/galoce/category-1/140.html). This subsystem conditions and amplifies the sensor differential input signals to prevent noise interference. The system is then sampled by an ADC at approximately 64kHz, and averaged to produce a clear 1kHz signal.
