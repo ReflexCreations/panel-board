@@ -2,6 +2,12 @@
 # Format documentation: http://kicad-pcb.org/help/file-formats/
 
 release/
+release.zip
+*backups/
+*.xml
+*cache.lib
+*rescue*
+sym-lib-table
 
 # Temporary files
 *.000
